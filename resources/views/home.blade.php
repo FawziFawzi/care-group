@@ -1,6 +1,8 @@
 <x-layout>
     <!-- Header-->
     <x-header-panel />
+
+
     <!-- Section-->
     <section class="py-5">
         <div class="container px-4 px-lg-5 mt-5">
@@ -18,7 +20,7 @@
     </section>
     <!-- Footer-->
     <footer class="py-5 bg-dark">
-        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+        <div class="container"><p class="m-0 text-center text-white">Feel Free To Contact us by email.</p></div>
     </footer>
 
 

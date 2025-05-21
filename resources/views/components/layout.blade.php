@@ -6,6 +6,9 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Care Group</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap icons-->
@@ -17,28 +20,37 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="#">Care Group</a>
+        <a class="navbar-brand" href="/">Care Group</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
 
             </ul>
-            <form class="d-flex">
-                <button class="btn btn-outline-dark" type="submit">
-                    <i class="bi-cart-fill me-1"></i>
-                    Cart
-                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                </button>
-            </form>
+
+                    <a href="{{ route('cart.index') }}" class="btn btn-outline-dark"><i class="bi-cart-fill me-1"></i>
+                        Cart
+                        <span class="badge bg-dark text-white ms-1 rounded-pill">{{ Cart::instance('default')->count() }}
+                        </span>
+                    </a>
+
+
         </div>
     </div>
 </nav>
 
 {{ $slot }}
 
+
+<x-flash-message />
+<x-flash-error />
+
+<script defer src="https://unpkg.com/alpinejs@3.3.2/dist/cdn.min.js"></script>
+
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
+
+@yield('extra-js')
 </body>
 </html>

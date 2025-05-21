@@ -229,6 +229,21 @@ mark, .mark {
   padding: 0.1875em;
   background-color: var(--bs-highlight-bg);
 }
+.cart-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+.cart-table th, .cart-table td {
+    vertical-align: middle;
+}
+.cart-total {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.quantity-input {
+    width: 80px;
+}
 
 sub,
 sup {
