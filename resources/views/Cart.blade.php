@@ -53,7 +53,7 @@
                 </table>
 
                 <div class="text-end">
-                    <a href="/checkout" class="btn btn-primary">Proceed to Checkout</a>
+                    <a href="{{ route('checkout.index') }}" class="btn btn-primary">Proceed to Checkout</a>
                 </div>
                 @endif
             </div>

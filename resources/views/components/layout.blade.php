@@ -42,7 +42,6 @@
 
 
 <x-flash-message />
-<x-flash-error />
 
 <script defer src="https://unpkg.com/alpinejs@3.3.2/dist/cdn.min.js"></script>
 
