@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\OrderController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ProductController;
@@ -31,14 +32,18 @@ Route::middleware('cart.contains')->group(function () {
 Route::get('/confirmation/{order}', [CheckoutController::class, 'show'])->name('order.confirm');
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+//Route::get('/dashboard', function () {
+//    return view('dashboard');
+//})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::prefix('/admin')->group(function () {
+    Route::get('/home', [OrderController::class, 'index'])->name('admin.home');
 });
 
 require __DIR__.'/auth.php';
