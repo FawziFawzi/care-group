@@ -13,10 +13,19 @@ class AdminProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::latest()->paginate(4);
-        return view('admin.products', ['products' => $products]);
+        $products = Product::latest();
+        // Search by product name
+        if (request('search')) {
+            $search = $request->search;
+            $products->where(function($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%");
+            });
+        }
+        $newProducts = $products->paginate(5)->withQueryString();
+
+        return view('admin.products', ['products' => $newProducts]);
     }
 
     /**
