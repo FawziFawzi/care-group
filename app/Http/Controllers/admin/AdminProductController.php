@@ -46,7 +46,8 @@ class AdminProductController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        return view('admin.product', ['product' => $product]);
     }
 
     /**
@@ -54,15 +55,24 @@ class AdminProductController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        return view('admin.product-edit', ['product' => $product]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(ProductRequest $request, string $id)
     {
-        //
+        //check if the product exists
+        $product = Product::findOrFail($id);
+
+        $credentials = $request->all();
+        $credentials['image'] = $request->file('image')->store('productImages', 'public');
+        $credentials['user_id'] = Auth::id();
+        $product -> update($credentials);
+
+        return redirect()->route('admin.products.show', $product->id)->with('success', 'Product updated successfully.');
     }
 
     /**

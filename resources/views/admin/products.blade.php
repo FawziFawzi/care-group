@@ -12,8 +12,8 @@
                                             <th>PRODUCT NAME</th>
                                             <th>PRODUCT DESCRIPTION</th>
                                             <th>PRODUCT PRICE</th>
-                                            <th>PRODUCT IMAGE</th>
                                             <th>PRODUCT CATEGORY</th>
+                                            <th>VIEW</th>
                                             <th>EDIT</th>
                                             <th class="text-end">DELETE</th>
                                         </tr>
@@ -24,9 +24,9 @@
                                             <td>{{ $product->name }}</td>
                                             <td>{{ $product->description }}</td>
                                             <td>${{ $product->price }}</td>
-                                            <td>{{ $product->image }}</td>
                                             <td>{{ $product->category }}</td>
-                                            <td><a href="#" class="btn btn-warning">Edit</a></td>
+                                            <td><a href="{{ route('admin.products.show', $product->id) }}" class="btn btn-info">VIEW</a></td>
+                                            <td><a href="{{ route('admin.products.edit',$product->id) }}" class="btn btn-warning">Edit</a></td>
                                             <td class="text-end">
                                                 <form class="d-flex" action="{{ route('admin.products.destroy', $product->id) }}" method="POST">
                                                     @csrf
@@ -34,7 +34,7 @@
                                                     <button class="btn btn-danger" type="submit">Delete</button>
                                                 </form>
                                             </td>
-                                        </tr>
+                                            </tr>
                                     @endforeach
                                     </tbody>
                                     @endif

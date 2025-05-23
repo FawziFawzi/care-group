@@ -19,7 +19,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="product_name">PRODUCT NAME</label>
                     <div class="col-md-4">
-                        <input id="product_name" name="name" placeholder="PRODUCT NAME" class="form-control input-md" required="" type="text" value="{{ old('name') }}">
+                        <input id="product_name" name="name" placeholder="PRODUCT NAME" class="form-control input-md" required type="text" value="{{ old('name') }}">
 
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="product_name_fr">PRODUCT CATEGORY</label>
                     <div class="col-md-4">
-                        <input id="product_name_fr" name="category" placeholder="PRODUCT Category" class="form-control input-md" required="" type="text" value="{{ old('category') }}">
+                        <input id="product_name_fr" name="category" placeholder="PRODUCT Category" class="form-control input-md" required type="text" value="{{ old('category') }}">
 
                     </div>
                 </div>
@@ -55,13 +55,12 @@
                         <label for="formFile" class="form-label">Upload product photo</label>
                         <input class="form-control" name="image" type="file" id="formFile">
                     </div>
-                </div>
 
-                <button type="submit" class="btn btn-secondary">Add Product</button>
-
+                <button type="submit" class="btn btn-primary">Add Product</button>
 
 
-            </fieldset>
-        </form>
+
+                </fieldset>
+            </form>
     </div>
 </x-admin.layout>
