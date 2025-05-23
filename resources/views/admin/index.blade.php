@@ -1,8 +1,5 @@
 <x-admin.layout>
 
-
-
-
     <!-- [ Main Content ] start -->
 
     <h5 class="mb-3">Recent Orders</h5>

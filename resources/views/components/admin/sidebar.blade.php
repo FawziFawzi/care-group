@@ -19,6 +19,11 @@
                         <span class="pc-mtext">Create New Product</span>
                     </a>
                 </li>
+                <li class="pc-item">
+                    <a href="{{ route('admin.products.logs') }}" class="pc-link">
+                        <span class="pc-mtext">Product Logs</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

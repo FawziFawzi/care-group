@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\AdminProductController;
 use App\Http\Controllers\admin\OrderController;
+use App\Http\Controllers\admin\ProductLogsController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ProductController;
@@ -51,8 +52,11 @@ Route::prefix('/admin')->middleware('auth')->group(function () {
     Route::get('/products/{id}', [AdminProductController::class, 'show'])->name('admin.products.show');
     Route::get('/products/edit/{id}', [AdminProductController::class, 'edit'])->name('admin.products.edit');
     Route::put('/products/{id}', [AdminProductController::class, 'update'])->name('admin.products.update');
-
     Route::delete('/products/{id}', [AdminProductController::class, 'destroy'])->name('admin.products.destroy');
+
+    //Logs
+    Route::get('/logs', [ProductLogsController::class, 'index'])->name('admin.products.logs');
+
 });
 
 require __DIR__.'/auth.php';
