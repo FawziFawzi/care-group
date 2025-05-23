@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\AdminProductController;
 use App\Http\Controllers\admin\OrderController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
@@ -44,6 +45,11 @@ Route::middleware('auth')->group(function () {
 
 Route::prefix('/admin')->group(function () {
     Route::get('/home', [OrderController::class, 'index'])->name('admin.home');
+    Route::get('/products', [AdminProductController::class, 'index'])->name('admin.products.index');
+    Route::get('/products/create', [AdminProductController::class, 'create'])->name('admin.products.create');
+    Route::post('/products/{id}', [AdminProductController::class, 'store'])->name('admin.products.store');
+
+    Route::delete('/products/{id}', [AdminProductController::class, 'destroy'])->name('admin.products.destroy');
 });
 
 require __DIR__.'/auth.php';

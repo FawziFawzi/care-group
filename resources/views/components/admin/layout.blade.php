@@ -33,10 +33,27 @@
 <!-- [Body] Start -->
 
 <body data-pc-preset="preset-1" data-pc-direction="ltr" data-pc-theme="light">
-    {{ $slot }}
 
+<x-admin.sidebar />
 
-<!-- [Page Specific JS] start -->
+<!-- [ Header Topbar ] start -->
+<x-admin.navbar />
+<!-- [ Header ] end -->
+<div class="pc-container">
+    <div class="pc-content">
+        <div class="row">
+            <div class="col-md-12 col-xl-12">
+                {{ $slot }}
+
+            </div>
+        </div>
+    </div>
+</div>
+    <x-flash-message />
+
+    <script defer src="https://unpkg.com/alpinejs@3.3.2/dist/cdn.min.js"></script>
+
+    <!-- [Page Specific JS] start -->
 <script src="{{ asset('dash/assets/js/plugins/apexcharts.min.js') }}"></script>
 <script src="{{ asset('dash/assets/js/pages/dashboard-default.js') }}"></script>
 <!-- [Page Specific JS] end -->
@@ -47,6 +64,7 @@
 <script src="{{ asset('dash/assets/js/fonts/custom-font.js') }}"></script>
 <script src="{{ asset('dash/assets/js/pcoded.js') }}"></script>
 <script src="{{ asset('dash/assets/js/plugins/feather.min.js') }}"></script>
+
 
 </body>
 <!-- [Body] end -->
