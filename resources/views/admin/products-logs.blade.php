@@ -5,7 +5,7 @@
             <div class="table-responsive">
                 <table class="table table-hover table-borderless " style="border-collapse: separate; border-spacing: 0 10px;">
                     <thead>
-                    @if($logs->count() == 0)
+                    @if($logs->count() === 0)
                         <h5>No Order LOGS Yet!</h5>
                     @else
                         <tr>

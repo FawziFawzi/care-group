@@ -18,7 +18,7 @@ class ProductFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'image' => fake()->imageUrl(),
+            'image' => asset('/notfound.jpg'),
             'description' => fake()->text(),
             'category' =>fake()->slug(),
             'price' => fake()->randomFloat(2, 1, 100),
