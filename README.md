@@ -116,6 +116,9 @@ Care Group is a modern e-commerce platform built with Laravel, designed to provi
     - Navigate to `/register` in your browser to register an admin
     - Navigate to `/login` in your browser to login
     - You Will be directed automatically to admin page
+    - **Admin Credentials**:
+      - Email: admin@email.com
+      - Password: password
 2. **Accessing the Admin Panel**:
    - Navigate to `/admin/home` in your browser
 
@@ -155,4 +158,3 @@ Care Group is a modern e-commerce platform built with Laravel, designed to provi
 - **tests/**: Contains test files
 - **config/**: Contains configuration files
 - **storage/**: Contains application storage files
-
